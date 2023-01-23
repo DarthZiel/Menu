@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+      <link type="text/css" href="{% static 'style.css' %}" rel="stylesheet" />
 </head>
 <body>
 {% for dish in results %}
@@ -11,11 +12,12 @@
 Название {{ dish.title }}
         <img src="{{dish.image.url}}" alt="" width="200px">
 Цена {{dish.price}}
-{%if %}
+{% if dish.ingredients %}
 {{dish.ingredients}}
-{%endif%}
+{% endif %}
 
-    </div>
+
 {% endfor %}
+<a href='/'>Проверка подключения стилей</a>
 </body>
 </html>
