@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for dish in results %}
+    {% ifchanged dish.category_id %}<h2>{{ dish.category_id }}</h2>{% endifchanged %}
+
+Название {{ dish.title }}
+        <img src="{{dish.image.url}}" alt="" width="200px">
+Цена {{dish.price}}
+{%if %}
+{{dish.ingredients}}
+{%endif%}
+
+    </div>
+{% endfor %}
+</body>
+</html>
